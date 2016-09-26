@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+
+{% block head_title %}Artists | {%endblock %}
+
+{% block content %}
+
+<div class="container" style="margin-top:70px">
+<!-- Artivities artist-cards -->
+        <div class="row" style="padding-top:30px">
+	        <div class="col-md-3">
+	          <!-- menus and filters-->
+	          <div class="panel panel-default sidebar-menu">
+	            <div class="panel-heading">
+	              <h3 class="panel-title">Filter <span class="pull-right"><a href="{% url 'artists_landing' %}">Clean Filters</a></span></h3>
+	            </div>
+	            <div class="panel-body">
+	              <ul class="nav nav-pills nav-stacked category-menu">
+	                <li><h5>By Art Form <span class="badge pull-right">{{art_forms|length}}</span></h5>
+	                  <ul>
+	                  {% for form in art_forms %}
+	                  <li> <a href="?art_form={{form.id}}">{{form.name}}</a></li>
+	                  {% endfor %}
+	                  </ul>
+	                </li>
+	                <li><h5>By Art Type <span class="badge pull-right">{{art_types|length}}</span></h5>
+	                  <ul>
+	                  {% for type in art_types %}
+	                  <li> <a {% if art_form %} href="?art_type={{type.id}}&art_form={{art_form}}" {% else %} href="?art_type={{type.id}}" {% endif %}>{{type.name}}</a></li>
+	                  {% endfor %}
+	                  </ul>
+	                </li>
+	              </ul>
+	            </div>
+	          </div>
+	        </div>
+	        <div class="col-md-9">
+	    		<div class="row">
+            		<!-- artist-card 1 -->
+		            {% for artist in all_artists %}
+					<div class="col-sm-4 col-lg-4 col-md-4">
+
+			            <div class="artist-card hoverartist-card">
+			                <div class="artist-cardheader" style="background:url('{{artist.cover_url|default_if_none:'#'}}')">
+			                </div>
+			                <div class="avatar">
+			                    <img alt="{{artist.name}}.jpg" src="{{artist.avatar_url|default_if_none:'#'}}">
+			                </div>
+			                <div class="info">
+			                    <div class="title">
+			                        <a target="_blank" href="{% url 'artist_profile' artist.id %}">{{artist.name}}</a>
+			                    </div>
+			                    <div class="desc">{{artist.artist_type}}</div>
+			                    <div class="desc">New Delhi</div>
+			                    <!-- <div class="desc">Tech geek</div> -->
+			                </div>
+			                <div class="bottom">
+			                    <a href="#">
+			                        <i class="fa fa-twitter fa-2x"></i>
+			                    </a>
+			                    <a href="#">
+			                        <i class="fa fa-google-plus fa-2x"></i>
+			                    </a>
+			                    <a href="#">
+			                        <i class="fa fa-facebook-official fa-2x" ></i>
+			                    </a>
+			                </div>
+			            </div>
+			        </div>
+			        {% endfor %}
+			    </div>
+			</div>
+ 		</div>
+</div>
+
+	<!-- <h1> All Artists </h1>
+    <ul>{% for artist in all_artists %}
+    	<li><a href="{% url 'artist_profile' artist.id %}">{{artist.name}}</a></li>
+    {% endfor %}
+    </ul> -->
+
+{% endblock %}

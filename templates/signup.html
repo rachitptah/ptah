@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block head_title %}Signup | {%endblock %}
+
+{% block content %}
+
+<div class="container">
+
+<div class="row">
+    <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3" style="margin-top: 70px">
+    	<form role="form" name="signupform" method="POST" action="{% url 'Signup' %}" onsubmit="return user.signup()">{% csrf_token %}
+			<h2>Welcome to Artivism <small>Sign up</small></h2>
+			<hr class="colorgraph" style="height: 7px; border-top: 0; background: grey; border-radius: 5px;">
+			<div class="row">
+				<div class="col-xs-12 col-sm-8 col-md-6">
+					<div class="form-group">
+                        <input type="text" name="first_name" id="first_name" class="form-control input-lg" placeholder="First Name" tabindex="1">
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-6 col-md-6">
+					<div class="form-group">
+						<input type="text" name="last_name" id="last_name" class="form-control input-lg" placeholder="Last Name" tabindex="2">
+					</div>
+				</div>
+			</div>
+			<div class="form-group">
+				<input type="text" name="username" id="username" class="form-control input-lg" placeholder="User Name" tabindex="3">
+			</div>
+			<div class="form-group">
+				<input type="email" name="email" id="email" class="form-control input-lg" placeholder="Email Address" tabindex="4">
+			</div>
+			<div class="row">
+				<div class="col-xs-12 col-sm-8 col-md-6">
+					<div class="form-group">
+						<input type="password" name="password" id="password" class="form-control input-lg" placeholder="Password" tabindex="5">
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-6 col-md-6">
+					<div class="form-group">
+						<input type="password" name="confirmpassword" id="confirmpassword" class="form-control input-lg" placeholder="Confirm Password" tabindex="6">
+					</div>
+				</div>
+			</div>
+				<!-- <div class="col-xs-12 col-sm-6 col-md-6">
+					<div class="form-group">
+						<input type="password" name="password_confirmation" id="password_confirmation" class="form-control input-lg" placeholder="Confirm Password" tabindex="6">
+					</div>
+				</div>
+			</div>
+			 <label>Sign up as:</label>
+                    <div class="row">
+                        <div class="col-xs-4 col-md-4">
+                            <select name="month" class = "form-control input-lg">
+                            <option value="01">Artist</option><option value="02">Art Enthusiast</option>
+                            </select>
+                        </div>
+                    </div> -->
+			<span class="help-block">By clicking Sign Up, you agree to our Terms and that you have read our Data Use Policy, including our Cookie Use.</span>
+			
+			<hr class="colorgraph" style="height: 7px; border-top: 0; background: grey; border-radius: 5px;"">
+			<div class="row">
+				<div class="col-xs-12 col-md-6 col-md-offset-3"><input type="submit" value="Sign Up" class="btn btn-primary btn-block btn-lg"></div>
+				<!-- <div class="col-xs-12 col-md-6"><a href="#" class="btn btn-success btn-block btn-lg">Sign In</a></div> -->
+			</div>
+		</form>
+	</div>
+</div>
+</div>
+
+{% endblock content %}

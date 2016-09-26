@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+
+{% load staticfiles %}
+
+{% block head_title %}Welcome | {%endblock %}
+
+{% block content %}
+
+<!-- Carousel-->
+    {% include 'carousel1.html' %}
+
+<!-- Marketing messaging and featurettes
+    ================================================== -->
+    <!-- Wrap the rest of the page in another container to center all the content. -->
+
+    <div class="container">
+
+      <!-- Three columns of text below the carousel -->
+      <div class="text-center" style="margin-bottom:40px"><h1>Explore</h1></div>
+      <div class="row">
+      <div class="text-center">
+        <div class="col-lg-3 col-md-6">
+        
+          <img class="img-circle" src="{% static 'img/Featurettes/art.jpg' %}" alt="Generic placeholder image" width="140" height="140">
+          <h2>Art</h2>
+          <p>Largest selection of original art.</p>
+          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+        
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-3 col-md-6">
+        
+          <img class="img-circle" src="{% static 'img/Featurettes/artists.jpg' %}" alt="Generic placeholder image" width="140" height="140">
+          <h2>Artists</h2>
+          <p>Meet the Artists</p>
+          <p><a class="btn btn-default" href="{% url 'artists_landing' %}" role="button">View details &raquo;</a></p>
+        
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-3 col-md-6">
+          <img class="img-circle" src="{% static 'img/Featurettes/artivities.jpg' %}" alt="Generic placeholder image" width="140" height="140">
+          <h2>Artivities</h2>
+          <p>Learn directly from the Artists</p>
+          <p><a class="btn btn-default" href="{% url 'artivities_home' %}" role="button">View details &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-3 col-md-6">
+          <img class="img-circle" src="{% static 'img/Featurettes/art shop.jpg' %}" alt="Generic placeholder image" width="140" height="140">
+          <h2>Art Shop</h2>
+          <p>And, buy directly from them.</p>
+          <p><a class="btn btn-default" href="{% url 'artshop_landing' %}" role="button">View details &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+      </div>
+      </div><!-- /.row -->
+
+
+      <!-- START THE FEATURETTES -->
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading">See what's trending in Art. <span class="text-muted">Explore the art world</span></h2>
+          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+        </div>
+        <div class="col-md-5">
+          <img class="featurette-image img-responsive center-block" src="{% static 'img/Featurettes/artists.jpg' %}" alt="Generic placeholder image">
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-7 col-md-push-5">
+          <h2 class="featurette-heading">Art needs an interaction. <span class="text-muted">Connect with Artists</span></h2>
+          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+        </div>
+        <div class="col-md-5 col-md-pull-7">
+          <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading">Keep learning something new. <span class="text-muted">Upcoming Artivities</span></h2>
+          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+        </div>
+        <div class="col-md-5">
+          <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-7 col-md-push-5">
+          <h2 class="featurette-heading">Oh yeah, it's not the end. <span class="text-muted">See what Art has for you in store.</span></h2>
+          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+        </div>
+        <div class="col-md-5 col-md-pull-7">
+          <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+        </div>
+      </div>
+
+      <!-- /END THE FEATURETTES -->
+{% endblock content %}

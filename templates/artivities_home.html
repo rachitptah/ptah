@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+
+{% block head_title %}Artivities | {%endblock %}
+
+{% block content %}
+
+<div class="container" style="margin-top:70px">
+	<div class="row">
+	    <div class="col-md-3">
+          <!-- menus and filters-->
+          <div class="panel panel-default sidebar-menu">
+            <div class="panel-heading">
+              <h3 class="panel-title">Filter <span class="pull-right"><a href="{% url 'artivities_home' %}">Clean Filters</a></span></h3>
+            </div>
+            <div class="panel-body">
+              <ul class="nav nav-pills nav-stacked category-menu">
+                <li><h5>By Art Form <span class="badge pull-right">{{art_forms|length}}</span></h5>
+                  <ul>
+                  {% for form in art_forms %}
+                  <li> <a href="?art_form={{form.id}}">{{form.name}}</a></li>
+                  {% endfor %}
+                  </ul>
+                </li>
+                <li><h5>By Art Type <span class="badge pull-right">{{art_types|length}}</span></h5>
+                  <ul>
+                  {% for type in art_types %}
+                  <li> <a {% if art_form %} href="?art_type={{type.id}}&art_form={{art_form}}" {% else %} href="?art_type={{type.id}}" {% endif %}>{{type.name}}</a></li>
+                  {% endfor %}
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-9">
+          <div class="info-bar">
+            <div class="row">
+              <div class="col-sm-12 col-md-4 products-showing">Showing <strong>2</strong> of <strong>2</strong> workshops</div>
+              <div class="col-sm-12 col-md-8 products-number-sort">
+                <div class="row">
+                  <div class="form-inline">
+                    <div class="col-md-6 col-sm-6">
+                      <div class="products-number"><strong>Show</strong> <a href="#" class="btn btn-default btn-sm btn-primary">12</a> <a href="#" class="btn btn-default btn-sm">24</a> <a href="#" class="btn btn-default btn-sm">All</a> <span class="hidden-md">products</span></div>
+                    </div>
+                    <div class="col-md-6 col-sm-6">
+                      <div class="products-sort-by"><strong>Sort by</strong>
+                        <select name="sort-by" class="form-control"><option>Traditional</option><option>Contemporary</option><option>Performing</option></select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+	    <div class="col-md-9" style="padding-top:30px">
+	    	<div class="row">
+	    	{% for workshop in all_workshop %}
+                <div class="col-sm-4 col-lg-4 col-md-4">
+                    <!-- <li class="card"> -->
+                    <div class="card">
+                      <img class="card-img-top" src="{{workshop.cover_photo.url}}" alt="{{workshop.title}}" height="180" width="100%">
+                      <div class="card-block">
+                        <h4 class="card-title">{{workshop.title}}</h4>
+                        <p class="card-text">
+                        {% for price in workshop.registration_set.all %}
+                        <h5>Registration Fees: {{price.price}}</h5>
+                        {% endfor %}
+                        <h5> Venue: {{workshop.venue}}</h5>
+                        </p>
+                        <a href="{% url 'workshop_details' workshop.id %}" class="btn btn-primary">Read More</a>
+                      </div>
+                    </div>
+                </div>{% endfor %}
+			</div>   
+	 	</div>
+	</div>
+</div>                              
+{% endblock content %}
