@@ -1,13 +1,11 @@
-"""
-WSGI config for ptah project.
-
-It exposes the WSGI callable as a module-level variable named ``application``.
-
-For more information on this file, see
-https://docs.djangoproject.com/en/1.9/howto/deployment/wsgi/
-"""
-
 import os
+import sys
+
+PROJECT_PATH = '/var/www/site/ptah'
+PROJECT_PATH_MAIN = '/var/www/site/ptah/ptah/settings'
+
+sys.path.insert(0, PROJECT_PATH)
+sys.path.append(PROJECT_PATH_MAIN)
 
 from django.core.wsgi import get_wsgi_application
 

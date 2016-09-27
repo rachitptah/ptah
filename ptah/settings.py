@@ -91,10 +91,10 @@ WSGI_APPLICATION = 'ptah.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'artivism',
-        'USER': 'ptah',
-        'PASSWORD': 'ptah',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'ptahdb',
+        'USER': 'root',
+        'PASSWORD': 'root',
         'HOST': '',
         'PORT': '',
     }
