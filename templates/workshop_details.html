@@ -4,21 +4,32 @@
 
 {% block content %}
 
+
+
 <div class="container" style="margin-top:70px">
-
-<h2>{{workshop_detail.title}}</h2>
-
-<h6>Artist:<a href="{% url 'artist_profile' workshop_detail.artist.id %}">{{workshop_detail.artist}}</a></h6>
-
-<h4>Art Form: {{workshop_detail.category}}</h4>
-<h4>Art Type: {{workshop_detail.arttype}}</h4>
-<h4>Description: {{workshop_detail.description}}</h4>
-<h4>Start Date: {{workshop_detail.startdate|date:"d-M-Y"}} </h4>
-<h4>End Date:  {{workshop_detail.enddate|date:"d-M-Y"}}</h4>
-<h4>Timings: {{workshop_detail.startdate|date:"h:i a"}} to {{workshop_detail.enddate|date:"h:i a"}}</h4>
-<h4>Venue: {{workshop_detail.venue}}</h4>
-
-
+	<h2>{{workshop_detail.title}}</h2>
+	<div class="row">
+		<div class="col-sm-8">
+			<h2><b>DETAILS</b></h2>
+			<h4>Overview:</h4>
+			<h5>{{workshop_detail.description}}</h5>
+		</div>
+		<div class="col-sm-4">
+			<h4><span class="glyphicon glyphicon-calendar"></span><b>  {{workshop_detail.startdate|date:"d-M-Y"}}<br>{{workshop_detail.startdate|date:"h:i a"}} to {{workshop_detail.enddate|date:"h:i a"}}</b></h4>
+			<h4><span class="glyphicon glyphicon-map-marker"></span><b>  {{workshop_detail.venue}}</b></h4>
+		</div>
 </div>
 
 {% endblock content %}  
+
+
+
+<!-- <h6>Artist:<a href="{% url 'artist_profile' workshop_detail.artist.id %}">{{workshop_detail.artist}}</a></h6>
+
+<h4>Art Form: {{workshop_detail.category}}</h4>
+<h4>Art Type: {{workshop_detail.arttype}}</h4>
+
+<h4>Start Date: {{workshop_detail.startdate|date:"d-M-Y"}} </h4>
+<h4>End Date:  {{workshop_detail.enddate|date:"d-M-Y"}}</h4>
+<h4>Timings: {{workshop_detail.startdate|date:"h:i a"}} to {{workshop_detail.enddate|date:"h:i a"}}</h4>
+<h4>Venue: </h4> -->

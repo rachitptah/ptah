@@ -36,7 +36,7 @@ class Registration(models.Model):
 
 	workshop = models.ForeignKey(Workshop, null=True, on_delete=models.CASCADE)
 	regtype = models.CharField(max_length=100, blank=False, null=True, verbose_name="Registration Type")
-	description = models.TextField(max_length=100, blank=False, null=True)
+	description = models.TextField(max_length=100, blank=True, null=True)
 	quantity = models.IntegerField(blank=False, null=True)
 	price = models.DecimalField(max_digits=6, decimal_places=2, null=True)
 	startdate = models.DateTimeField(null=True, verbose_name="Sale Start Date/Time")

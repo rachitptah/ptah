@@ -67,6 +67,7 @@
                         <h5>Registration Fees: {{price.price}}</h5>
                         {% endfor %}
                         <h5> Venue: {{workshop.venue}}</h5>
+                        <h5>Date: {{workshop.startdate|date:"d-M-y"}}
                         </p>
                         <a href="{% url 'workshop_details' workshop.id %}" class="btn btn-primary">Read More</a>
                       </div>
