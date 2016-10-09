@@ -15,8 +15,14 @@
 			<h5>{{workshop_detail.description}}</h5>
 		</div>
 		<div class="col-sm-4">
-			<h4><span class="glyphicon glyphicon-calendar"></span><b>  {{workshop_detail.startdate|date:"d-M-Y"}}<br>{{workshop_detail.startdate|date:"h:i a"}} to {{workshop_detail.enddate|date:"h:i a"}}</b></h4>
-			<h4><span class="glyphicon glyphicon-map-marker"></span><b>  {{workshop_detail.venue}}</b></h4>
+			<h4>
+				<span class="glyphicon glyphicon-calendar"></span><b>  {{workshop_detail.startdate|date:"d-M-Y"}}<br>
+				<span style="margin-left:23px">{{workshop_detail.startdate|date:"h:i a"}} to {{workshop_detail.enddate|date:"h:i a"}}</span></b>
+			</h4>
+			<h4>
+				<span class="glyphicon glyphicon-map-marker"></span><b>  {{workshop_detail.venue}}<br>
+				<span style="margin-left:23px">{{workshop_detail.venue.address}}</span></b>
+			</h4>
 		</div>
 </div>
 
