@@ -27,7 +27,7 @@ SECRET_KEY = '20v(+#f$olw%nj^ri!q!$!&%7tnovzw6equ($)545^hkkpikr0'
 GEOPOSITION_GOOGLE_MAPS_API_KEY = 'AIzaSyArh3hdv62CZUn-Hj53prBCI6uFALDnrM0'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = []
 

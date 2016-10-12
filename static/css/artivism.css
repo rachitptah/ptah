@@ -586,4 +586,52 @@ background-color: #F1F1F1;
     }
 }
 
+/*artivities_details*/
+.left-detail-panel {
+    margin-left: 40px;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #e8e8e8;
+    border-radius: 4px;
+    -webkit-box-shadow: 3px 3px 3px #888888;
+}
 
+.description-panel {
+    padding: 20px;
+  margin-bottom: 20px;
+  background-color: #fff;
+  border: 1px solid #e8e8e8;
+  border-radius: 4px;
+  -webkit-box-shadow: 3px 3px 3px #888888;
+}
+
+.left-detail-panel .artist-avatar img {
+    width: 100px;
+    height: 100px;
+    max-width: 100px;
+    max-height: 100px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    border: 5px solid rgba(255,255,255,0.5);
+}
+
+.left-detail-panel .artist-title {
+    display: block;
+    margin-top: 15px;
+    overflow: hidden;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 18px;
+    color: #404040;
+}
+
+.left-detail-panel .artist-desc {
+    display: block;
+    overflow: hidden;
+    font-size: 14px;
+    line-height: 16px;
+    color: #737373;
+    margin-bottom: 5px;
+}

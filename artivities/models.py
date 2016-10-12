@@ -26,6 +26,7 @@ class Workshop(models.Model):
 	startdate = models.DateTimeField(null=True, verbose_name="Start Date/Time")
 	enddate = models.DateTimeField(null=True, verbose_name="End Date/Time")
 	total_seats = models.IntegerField(blank=False, null=True)
+	fb_event_link = models.URLField(blank=True, null=True, verbose_name="FB Event Link")
 	enable = models.BooleanField(default=False)
 
 	def __unicode__(self):

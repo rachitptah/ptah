@@ -7,23 +7,60 @@
 
 
 <div class="container" style="margin-top:70px">
-	<h2>{{workshop_detail.title}}</h2>
 	<div class="row">
 		<div class="col-sm-8">
-			<h2><b>DETAILS</b></h2>
-			<h4>Overview:</h4>
-			<h5>{{workshop_detail.description}}</h5>
+			<div class="description-panel">
+				<h2 style="margin-top: 10px">{{workshop_detail.title}}</h2>
+				<img src="{{workshop_detail.cover_photo.url}}" class="img-responsive">	
+			</div>
+			<div class="description-panel">
+				<h4><b>DETAILS</b></h4>
+				<!-- h4>Overview:</h4> -->
+				<h5>{{workshop_detail.description|linebreaks}}</h5><br>
+				<h5><b>Check the event on:</b></h5>
+				<a target="_blank" href="{{workshop_detail.fb_event_link}}">
+		            <i class="fa fa-facebook-official fa-2x"></i>
+		        </a>
+		        <a href="#">
+                    <i class="fa fa-instagram fa-2x"></i>
+                </a>
+			</div>
 		</div>
-		<div class="col-sm-4">
+		<div class="col-sm-3 left-detail-panel">
 			<h4>
 				<span class="glyphicon glyphicon-calendar"></span><b>  {{workshop_detail.startdate|date:"d-M-Y"}}<br>
 				<span style="margin-left:23px">{{workshop_detail.startdate|date:"h:i a"}} to {{workshop_detail.enddate|date:"h:i a"}}</span></b>
 			</h4>
 			<h4>
-				<span class="glyphicon glyphicon-map-marker"></span><b>  {{workshop_detail.venue}}<br>
-				<span style="margin-left:23px">{{workshop_detail.venue.address}}</span></b>
+				<span class="glyphicon glyphicon-map-marker"></span><b>  {{workshop_detail.venue}}</b><br>
+				<!-- <span style="margin-left:23px">{{workshop_detail.venue.address}}</span></b> -->
 			</h4>
+			<a class="btn btn-danger btn-block" href="#" role="button">Register</a>
 		</div>
+		<div class="col-sm-3 left-detail-panel">
+		<h4 class="col-sm-12" style="border-bottom:solid 1px #e8e8e8; margin-top: 5px"><b>Artist<b></h4>
+			<div class="row">
+			<div class="col-sm-5 artist-avatar">
+				<img alt="{{workshop_detail.artist.name}}.jpg" src="{{workshop_detail.artist.avatar_url|default_if_none:'#'}}">
+			</div>
+			<div class="col-sm-7">
+				<div class="artist-title">
+            		<a target="_blank" href="{% url 'artist_profile' workshop_detail.artist.id %}">{{workshop_detail.artist.name}}</a>
+            	</div>
+            	<div class="artist-desc">{{workshop_detail.artist.artist_type}}</div>
+            	<a target="_blank" href="#">
+		            <i class="fa fa-facebook-official"></i>
+		        </a>
+		        <a href="#">
+                    <i class="fa fa-twitter-square"></i>
+                </a>
+                <a href="#">
+                    <i class="fa fa-instagram"></i>
+                </a>
+            </div>
+            </div>
+        </div>
+	</div>
 </div>
 
 {% endblock content %}  
