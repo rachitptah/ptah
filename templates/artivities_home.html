@@ -53,7 +53,7 @@
             </div>
           </div>
         </div> -->
-	    <div class="col-md-9" style="padding-top:30px">
+	    <div class="col-md-9">
 	    	<div class="row">
 	    	{% for workshop in all_workshop %}
                 <div class="col-sm-4 col-lg-4 col-md-4">
@@ -61,15 +61,16 @@
                     <div class="card">
                       <img class="card-img-top" src="{{workshop.cover_photo.url}}" alt="{{workshop.title}}" height="180" width="100%">
                       <div class="card-block">
-                        <h4 class="card-title">{{workshop.title}}</h4>
-                        <p class="card-text">
+                        <a href="{% url 'workshop_details' workshop.id %}" class="card-title">{{workshop.title}}</a>
+                        <div class="card-text">
+                        <h5><span class="glyphicon glyphicon-map-marker"></span> {{workshop.venue}}</h5>
+                        <h5><span class="glyphicon glyphicon-calendar"></span> {{workshop.startdate|date:"d-M-y"}}
                         {% for price in workshop.registration_set.all %}
-                        <h5>Registration Fees: {{price.price}}</h5>
+                        <span style="float:right;">&#8377 {{price.price}}</span></h5>
                         {% endfor %}
-                        <h5> Venue: {{workshop.venue}}</h5>
-                        <h5>Date: {{workshop.startdate|date:"d-M-y"}}
-                        </p>
-                        <a href="{% url 'workshop_details' workshop.id %}" class="btn btn-primary">Read More</a>
+                        </div>
+
+                        <!-- <a href="{% url 'workshop_details' workshop.id %}" class="btn btn-primary">Read More</a> -->
                       </div>
                     </div>
                 </div>{% endfor %}

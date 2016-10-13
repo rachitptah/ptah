@@ -18,7 +18,8 @@
 }
 
 .card-title {
-    margin-bottom:.75rem
+    font-size: 20px;
+    margin-bottom:.75rem;
 }
 
 .card-subtitle {
@@ -606,6 +607,22 @@ background-color: #F1F1F1;
   -webkit-box-shadow: 3px 3px 3px #888888;
 }
 
+.description-panel .cover-image img {
+    display: block;
+    min-width: 100%;
+    height: auto;
+    margin-top: 10px;
+}
+
+.description-panel .workshop-title {
+    margin-top: 10px; 
+    display: block;
+    overflow: hidden;
+    font-size: 25px;
+    font-weight: bold;
+    border-bottom:solid 2px #e8e8e8;
+}
+
 .left-detail-panel .artist-avatar img {
     width: 100px;
     height: 100px;
@@ -624,7 +641,6 @@ background-color: #F1F1F1;
     font-size: 16px;
     font-weight: bold;
     line-height: 18px;
-    color: #404040;
 }
 
 .left-detail-panel .artist-desc {
@@ -634,4 +650,80 @@ background-color: #F1F1F1;
     line-height: 16px;
     color: #737373;
     margin-bottom: 5px;
+}
+
+
+/*artist usermenu*/
+
+.artist-usermenu {
+    margin-bottom: 20px;
+    margin-top: 20px;
+    padding: 0px;
+    background-color: #F1F1F1;
+    border: 1px solid #e8e8e8;
+}
+
+.artist-usermenu a{
+    font-size: 18px;
+    color: #808080;
+}
+
+.artist-usermenu a:hover {
+    color: #337ab7;
+}
+
+.artist-usermenu ul li {
+  border-bottom: 1px solid #f0f4f7;
+}
+
+.artist-usermenu ul li:last-child {
+  border-bottom: none;
+}
+
+.artist-usermenu ul li a {
+  color: #93a3b5;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.artist-usermenu ul li a i {
+  margin-right: 8px;
+  font-size: 14px;
+}
+
+/*.artist-usermenu ul li a:hover {
+  background-color: #fafcfd;
+  color: #5b9bd1;
+}*/
+
+/*.artist-usermenu ul li.active {
+  border-bottom: none;
+}*/
+
+.artist-usermenu ul li a:hover {
+  color: #5b9bd1;
+  background-color: #f6f9fb;
+  border-left: 2px solid #5b9bd1;
+  margin-left: -2px;
+}
+
+.artist-usermenu ul li .active{
+  color: #5b9bd1;
+  background-color: #f6f9fb;
+  border-left: 2px solid #5b9bd1;
+  margin-left: -2px;
+}
+
+/*artist-featured-pannel*/
+.artist-content-panel {
+    padding: 20px;
+}
+
+.artist-content-panel .panel-title {
+    /*margin-top: 10px; */
+    display: block;
+    overflow: hidden;
+    font-size: 25px;
+    border-bottom:solid 1px #e8e8e8; 
+    margin-bottom: 20px;   
 }

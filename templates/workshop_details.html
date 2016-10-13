@@ -10,8 +10,10 @@
 	<div class="row">
 		<div class="col-sm-8">
 			<div class="description-panel">
-				<h2 style="margin-top: 10px">{{workshop_detail.title}}</h2>
-				<img src="{{workshop_detail.cover_photo.url}}" class="img-responsive">	
+				<div class="workshop-title">{{workshop_detail.title}}</div>
+				<div class="cover-image">
+				<img src="{{workshop_detail.cover_photo.url}}" class="img-responsive">
+				</div>	
 			</div>
 			<div class="description-panel">
 				<h4><b>DETAILS</b></h4>
@@ -21,7 +23,7 @@
 				<a target="_blank" href="{{workshop_detail.fb_event_link}}">
 		            <i class="fa fa-facebook-official fa-2x"></i>
 		        </a>
-		        <a href="#">
+		        <a target="_blank" href="#">
                     <i class="fa fa-instagram fa-2x"></i>
                 </a>
 			</div>
@@ -40,26 +42,33 @@
 		<div class="col-sm-3 left-detail-panel">
 		<h4 class="col-sm-12" style="border-bottom:solid 1px #e8e8e8; margin-top: 5px"><b>Artist<b></h4>
 			<div class="row">
-			<div class="col-sm-5 artist-avatar">
-				<img alt="{{workshop_detail.artist.name}}.jpg" src="{{workshop_detail.artist.avatar_url|default_if_none:'#'}}">
-			</div>
-			<div class="col-sm-7">
-				<div class="artist-title">
-            		<a target="_blank" href="{% url 'artist_profile' workshop_detail.artist.id %}">{{workshop_detail.artist.name}}</a>
-            	</div>
-            	<div class="artist-desc">{{workshop_detail.artist.artist_type}}</div>
-            	<a target="_blank" href="#">
-		            <i class="fa fa-facebook-official"></i>
-		        </a>
-		        <a href="#">
-                    <i class="fa fa-twitter-square"></i>
-                </a>
-                <a href="#">
-                    <i class="fa fa-instagram"></i>
-                </a>
-            </div>
+				<div class="col-sm-5 artist-avatar">
+					<img alt="{{workshop_detail.artist.name}}.jpg" src="{{workshop_detail.artist.avatar_url|default_if_none:'#'}}">
+				</div>
+				<div class="col-sm-7">
+					<div class="artist-title">
+	            		<a target="_blank" href="{% url 'artist_profile' workshop_detail.artist.id %}">{{workshop_detail.artist.name}}</a>
+	            	</div>
+	            	<div class="artist-desc">{{workshop_detail.artist.artist_type}}</div>
+	            	<a target="_blank" href="#">
+			            <i class="fa fa-facebook-official"></i>
+			        </a>
+			        <a class="_blank" href="#">
+	                    <i class="fa fa-twitter-square"></i>
+	                </a>
+	                <a class="_blank" href="#">
+	                    <i class="fa fa-instagram"></i>
+	                </a>
+	            </div>
             </div>
         </div>
+        <div class="col-sm-3 left-detail-panel">
+        	<h4 style="border-bottom:solid 1px #e8e8e8; margin-top: 5px"><b>Contact us:</b></h4>
+			<h5 style="margin-left: 80px;">
+				<span class="fa fa-mobile"></span>  +91-7503419644 <br>
+				<span class="fa fa-envelope"></span>  info@artivism.in
+			</h5>
+		</div>
 	</div>
 </div>
 

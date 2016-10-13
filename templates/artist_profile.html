@@ -6,20 +6,67 @@
 
 
 <div class="container" style="margin-top:70px">
-	<div class="row panel body_artist_profile">
-		<div class="col-md-4 bg_blur", style="background:url('{{artist_profiles.cover_url|default_if_none:'#'}}')">
-    	    <a href="#" class="follow_btn hidden-xs">Follow</a>
-		</div>
+    <div class="row panel body_artist_profile">
+		    <div class="col-md-4 bg_blur", style="background:url('{{artist_profiles.cover_url|default_if_none:'#'}}')">
+            <a href="#" class="follow_btn hidden-xs">Follow</a>
+		    </div>
         <div class="col-md-8  col-xs-12">
-           <img src="{{artist_profiles.avatar_url|default_if_none:'#'}}" class="img-thumbnail picture hidden-xs" />
+            <img src="{{artist_profiles.avatar_url|default_if_none:'#'}}" class="img-thumbnail picture hidden-xs" />
           <!--  <img src="http://lorempixel.com/output/people-q-c-100-100-1.jpg" class="img-thumbnail visible-xs picture_mob" /> -->
-           <div class="header">
+            <div class="header">
                 <h1>{{artist_profiles.name}}</h1>
                 <h4>{{artist_profiles.artist_type}}</h4>
                 <span>{{artist_profiles.about_yourself}}</span>
-           </div>
+            </div>
         </div>
-    </div>   
+    </div>
+    <div class="row">
+    <div class="col-sm-3 artist-usermenu">
+        <ul class="nav">
+          <!-- <li class="dropdown">
+            <a class="dropdown-toggle active" data-toggle="dropdown" href="#">
+            <i class="fa fa-user"></i>
+            Bio <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li>kjbdsfkj</li></ul>
+          </li> -->
+            <li>
+              <a class="active" href="#" target="_blank">
+              <i class="fa fa-calendar-o"></i>
+              Artivities </a>
+            </li>
+            <li>
+              <a href="#">
+              <i class="fa fa-shopping-bag"></i>
+              Art Shop </a>
+            </li>
+        </ul>
+    </div>
+    <div class="col-sm-9 artist-content-panel">
+      <div class="panel-title">Featured Artivities</div>
+      <div class="row">
+        {% for workshop in artist_workshops %}
+          <div class="col-sm-4 col-lg-4 col-md-4">
+              <!-- <li class="card"> -->
+              <div class="card">
+                <img class="card-img-top" src="{{workshop.cover_photo.url}}" alt="{{workshop.title}}" height="180" width="100%">
+                <div class="card-block">
+                  <a href="{% url 'workshop_details' workshop.id %}" class="card-title">{{workshop.title}}</a>
+                  <div class="card-text">
+                  <h5><span class="glyphicon glyphicon-map-marker"></span> {{workshop.venue}}</h5>
+                  <h5><span class="glyphicon glyphicon-calendar"></span> {{workshop.startdate|date:"d-M-y"}}
+                  {% for price in workshop.registration_set.all %}
+                  <span style="float:right;">&#8377 {{price.price}}</span></h5>
+                  {% endfor %}
+                  </div>
+                </div>
+              </div>
+          </div>
+        {% endfor %}
+      </div>   
+    </div>
+    </div>
+</div>
     
 	<!-- div class="row nav">    
         <div class="col-md-4"></div>

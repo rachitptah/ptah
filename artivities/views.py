@@ -20,6 +20,7 @@ class WorkshopListView (TemplateView):
 
 		if art_type:
 			filter_query_form["art_type_id"] = art_type
+		filter_query_form["enable"]= True
 		context["all_workshop"] = Workshop.objects.filter(**filter_query_form)
 		context["art_forms"] = ArtForm.objects.all() 
 		context["art_form"] = art_form
