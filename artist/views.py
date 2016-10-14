@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.views.generic import TemplateView
 from .models import ArtistProfile
 from art.models	import ArtForm, ArtType
+from artivities.models import Workshop
 
 # Create your views here.
 class ArtistsLandingView (TemplateView):
@@ -32,4 +33,5 @@ class ArtistProfileView (TemplateView):
 	def get(self, request,*args,**kwargs):
 		context = super(ArtistProfileView, self).get_context_data(**kwargs)
 		context["artist_profiles"] = ArtistProfile.objects.get(id=context["artist_id"])
+		context["artist_workshops"] = Workshop.objects.filter(artist_id=context["artist_id"])
 		return self.render_to_response(context)
