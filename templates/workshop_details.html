@@ -50,13 +50,13 @@
 	            		<a target="_blank" href="{% url 'artist_profile' workshop_detail.artist.id %}">{{workshop_detail.artist.name}}</a>
 	            	</div>
 	            	<div class="artist-desc">{{workshop_detail.artist.artist_type}}</div>
-	            	<a target="_blank" href="#">
+	            	<a target="_blank" href="{{workshop_detail.artist.fb_link}}">
 			            <i class="fa fa-facebook-official"></i>
 			        </a>
-			        <a class="_blank" href="#">
+			        <a target="_blank" href="{{workshop_detail.artist.twitter_link}}">
 	                    <i class="fa fa-twitter-square"></i>
 	                </a>
-	                <a class="_blank" href="#">
+	                <a target="_blank" href="{{workshop_detail.artist.insta_link}}">
 	                    <i class="fa fa-instagram"></i>
 	                </a>
 	            </div>

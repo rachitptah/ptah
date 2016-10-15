@@ -21,7 +21,11 @@ class ArtistProfile(models.Model):
 	about_yourself = models.TextField(max_length=500, blank=True, null=True)
 	avatar = models.ImageField (upload_to="artists_avatar/", blank=True, null=True)
 	cover_image = models.ImageField (upload_to="artists_cover_image/", blank=True, null=True)
-	dob = models.DateField(null=True)
+	dob = models.DateField(null=True, blank=True)
+	fb_link = models.URLField(blank=True, null=True, verbose_name="FB Account Link")
+	insta_link = models.URLField(blank=True, null=True, verbose_name="Instagram Link")
+	twitter_link = models.URLField(blank=True, null=True, verbose_name="Twitter Link")
+	enable = models.BooleanField(default=False)
 
 	@property
 	def avatar_url(self):
